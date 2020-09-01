@@ -5,8 +5,10 @@
   <title>Blynk IoT Dashboard</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
 </head>
-
+<style>img[alt="www.000webhost.com"]{display:none;}</style>
 <body>
 <nav class="navbar navbar-dark bg-dark">
 <div class="container-fluid">
