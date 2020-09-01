@@ -62,8 +62,10 @@ var board = data.devices[0].boardType;
 
  if(data4==true){
            var hs =  "<span class='badge badge-success'>Online</span>";
+		   $("#enterPin").attr("hidden",false);
         }else{
             var hs =  "<span class='badge badge-danger'>Offline</span>";
+			$("#enterPin").attr("hidden",true);
         }
 
     $("#hs").html(hs);
@@ -99,7 +101,7 @@ var board = data.devices[0].boardType;
   
    $("#slidepin").click(function () {
      
-var buttonlable = $('#epin').val();
+	var buttonlable = $('#epin').val();
      var divid = "div"+buttonlable;
      if(buttonlable!="")
      var bt ="<div id="+divid+" class='alert'><div class='col-sm-2'><legend>"+buttonlable+"</legend></div><div class='col-sm-2'><input id="+buttonlable+" type='range' min='0' max='100' value='0' onchange='ranchang(this)'  /></div><div class='col-sm-2'><a href='#' class='btn btn-danger' id="+divid+"    onclick='remo(this)'>Remove</a></div></div><br>";

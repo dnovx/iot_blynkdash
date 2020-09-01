@@ -17,13 +17,14 @@
 	</div>
 </div>
 </nav>
+<br>
 <div class="container">
-<div class="col-sm-2"><legend>Enter The Token</legend></div>
-<div class="col-sm-3"><input class="form-control" id="focusedInput" type="text"></div>
-<!--<div class="col-sm-2"><legend>custom server</legend></div>-->
-<!--<div class="col-sm-3"><input class="form-control" id="csInput" type="text" placeholder="blynk-cloud.com"></div>-->
-  
- <div class="col-sm-2">  <button id="sub"  class="btn btn-primary">Submit</button></div>
+	<div class="form-inline">
+		<div class="form-group">
+			<legend for="focusedInput">Enter Auth Token</legend>
+			<input type="text" class="form-control" id="focusedInput">
+			<button id="sub" class="btn btn-success ml-3">Get Data</button></div>
+	</div>
 </div>
  <br>
 <div class="container">
@@ -47,14 +48,15 @@
 </div>
 </div>
 </div>
-<div class="container ">
+<div id="enterPin" hidden>
+<div class="container">
 
- <div class="container">
+<div class="container">
 <div class="col-sm-2"><legend>Enter Pin Number</legend></div>
 <div class="col-sm-2"><input class="form-control" id="epin" type="text"></div>
  <div class="col-sm-5">  <button id="subpin"  class="btn btn-primary">Add Button</button>
   <button id="slidepin"  class="btn btn-primary">Add Slider Button</button>
-   </div>
+  </div>
 </div>
   
   <br>
@@ -64,6 +66,7 @@
     
   </div>
   
+</div>
 </div> 
 
 
