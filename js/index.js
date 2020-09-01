@@ -35,7 +35,6 @@ if(obj==1){
   
   
  $("#sub").click(function(){
-   
    var t =$('#focusedInput').val();
    var cs =$('#csInput').val();
    if (cs!="" && cs!=null)
@@ -71,6 +70,72 @@ var board = data.devices[0].boardType;
     $("#hs").html(hs);
 });
  });
+
+$('#ok').click(function(e) {
+        e.preventDefault();
+		var t =$('#focusedInput').val();
+		var cs =$('#csInput').val();
+		if(t!=null && t!=""){
+		if (cs!="" && cs!=null)
+		{
+        $.ajax({
+			dataType: "json",
+            url : "http://"+cs+":8080/"+t+"/project",
+            data: data,
+            success: function (data) {
+                var projectname = data.name;
+				var board = data.devices[0].boardType;
+				$("#pn").html(projectname);
+				$("#bt").html(board);
+            }
+        });
+		$.ajax({
+			dataType: "json",
+            url : "http://"+cs+":8080/"+t+"/isHardwareConnected",
+            data: data,
+            success: function (data) {
+				if(data==true){
+					var hs =  "<span class='badge badge-success'>Online</span>";
+					$("#enterPin").attr("hidden",false);
+				}else{
+					var hs =  "<span class='badge badge-danger'>Offline</span>";
+					$("#enterPin").attr("hidden",true);
+				}
+				$("#hs").html(hs);
+            }
+        });
+		}else {
+		$.ajax({
+			dataType: "json",
+            url : "http://188.166.206.43/"+t+"/project",
+            success: function (data) {
+                var projectname = data.name;
+				var board = data.devices[0].boardType;
+				$("#pn").html(projectname);
+				$("#bt").html(board);
+            }
+        });
+		$.ajax({
+			dataType: "json",
+            url : "http://188.166.206.43/"+t+"/isHardwareConnected",
+            success: function (data) {
+				if(data==true){
+					var hs =  "<span class='badge badge-success'>Online</span>";
+					$("#enterPin").attr("hidden",false);
+				}else{
+					var hs =  "<span class='badge badge-danger'>Offline</span>";
+					$("#enterPin").attr("hidden",true);
+				}
+				$("#hs").html(hs);
+            }
+        });	
+		}
+		}else{
+			var nullAlert = "<div class='alert alert-danger alert-dismissible fade show'><button type='button' class='close' data-dismiss='alert'>&times;</button><strong>You must</strong> provide your auth token.</div>"
+			$('.alert-message').prepend(nullAlert);
+			$(".alert").first().hide().fadeIn(500).delay(5000).fadeOut(500, function () { $(this).remove(); });
+		}
+    });
 
 
    $("#subpin").click(function () {
@@ -110,6 +175,4 @@ var board = data.devices[0].boardType;
      $('#epin').val("");
       $.fn.myFunction(buttonlable);
     });
-  
-
 });

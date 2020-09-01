@@ -21,12 +21,14 @@
 </nav>
 <br>
 <div class="container">
-	<div class="form-inline">
+	<form class="form-inline" data-toggle="validator">
 		<div class="form-group">
+			<div class="alert-message"></div>
 			<legend for="focusedInput">Enter Auth Token</legend>
-			<input type="text" class="form-control" id="focusedInput">
-			<button id="sub" class="btn btn-success ml-3">Get Data</button></div>
-	</div>
+			<input type="text" class="form-control" id="focusedInput" required="true">
+			<button type="submit" id="ok" class="btn btn-success ml-3">Get Data</button>
+		</div>
+	</form>
 </div>
  <br>
 <div class="container">
@@ -37,14 +39,14 @@
 <div class="card-body">
 <div class="container">
   <div class="col-sm-3"><label>Project Name :</label></div>
-   <div class="col-sm-9"><label id="pn">------</label></div>
+   <div class="col-sm-9"><h4 id="pn">n/a</h3></div>
   
     <div class="col-sm-3"><label>Board Type :</label></div>
-   <div class="col-sm-9"><label id="bt">------</label></div>
+   <div class="col-sm-9"><h4 id="bt">n/a</h3></div>
 
 
     <div class="col-sm-3"><label>Hardware Status :</label></div>
-   <div class="col-sm-9"><label id="hs">------</label></div>
+   <div class="col-sm-9"><h4 id="hs">n/a</h4></div>
 </div>
 </div>
 </div>
